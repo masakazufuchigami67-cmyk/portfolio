@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASAKAZU FUCHIGAMI — Creative Director</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&family=Noto+Sans+JP:wght@100;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="site-logo">MASAKAZU FUCHIGAMI</div>
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <a href="#work">実績</a>
+      <a href="#about">プロフィール</a>
+      <a href="#awards">受賞歴</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="イントロダクション">
+    <div class="hero-orb" aria-hidden="true"></div>
+    <p class="hero-eyebrow">Creative Director</p>
+    <h1 class="hero-name">
+      <span class="hero-name-line1">MASAKAZU</span>
+      <span class="hero-name-line2">FUCHIGAMI</span>
+    </h1>
+    <ul class="hero-tags" aria-label="専門領域">
+      <li>ブランディング</li>
+      <li>ビジョニング</li>
+      <li>統合型コミュニケーション</li>
+      <li>UI/UX デザイン</li>
+      <li>コンセプト開発</li>
+    </ul>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">11<span class="stat-plus">+</span></span>
+        <span class="stat-label">受賞・ノミネート</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">42<span class="stat-plus">+</span></span>
+        <span class="stat-label">プロジェクト</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num stat-num--small">GOOD<br>DESIGN</span>
+        <span class="stat-label">金賞・Best100</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="work" role="tablist" aria-label="カテゴリフィルター">
+    <button class="filter-btn active" data-filter="all" role="tab" aria-pressed="true">ALL</button>
+    <button class="filter-btn" data-filter="brand" role="tab" aria-pressed="false">ブランディング</button>
+    <button class="filter-btn" data-filter="uiux" role="tab" aria-pressed="false">UI / UX</button>
+    <button class="filter-btn" data-filter="ad" role="tab" aria-pressed="false">広告・CM</button>
+    <button class="filter-btn" data-filter="film" role="tab" aria-pressed="false">映像</button>
+    <button class="filter-btn" data-filter="space" role="tab" aria-pressed="false">空間・サイン</button>
+    <button class="filter-btn" data-filter="web" role="tab" aria-pressed="false">WEB</button>
+  </div>
+
+  <!-- WORK GRID -->
+  <main class="work-grid" id="work-grid">
+
+    <!-- 42 project cards inserted in Task 3 -->
+
+  </main>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-bio">
+      <p class="about-eyebrow">クリエイティブディレクター</p>
+      <h2 class="about-name">MASAKAZU<br>FUCHIGAMI</h2>
+      <p class="about-body">
+        専門・得意領域：<br>
+        ブランディング、ビジョニング<br>
+        統合型コミュニケーションデザイン<br>
+        戦略、コンセプト、アイデンティティの開発
+      </p>
+    </div>
+    <div class="awards-card" id="awards">
+      <p class="awards-title">Awards &amp; Recognition</p>
+      <ul class="awards-list">
+        <li><span class="award-name">ACC TOKYO CREATIVITY AWARDS</span><span class="award-val">シルバー</span></li>
+        <li><span class="award-name">GOOD DESIGN AWARD</span><span class="award-val">金賞・Best100</span></li>
+        <li><span class="award-name">SDA Award</span><span class="award-val">ゴールド</span></li>
+        <li><span class="award-name">日本空間デザイン賞</span><span class="award-val">ブロンズ</span></li>
+        <li><span class="award-name">ディスプレイ産業賞</span><span class="award-val">優秀賞</span></li>
+        <li><span class="award-name">One Screen Film Festival</span><span class="award-val">finalist</span></li>
+        <li><span class="award-name">AD STARS</span><span class="award-val">finalist</span></li>
+        <li><span class="award-name">JAA 消費者が選んだ広告コンクール</span><span class="award-val">入賞</span></li>
+        <li><span class="award-name">観光映像大賞</span><span class="award-val">旅もじゃ賞</span></li>
+        <li><span class="award-name">日本観光ポスターコンクール</span><span class="award-val">国土交通大臣賞</span></li>
+        <li><span class="award-name">JAAA クリエイティブ・オブ・ザ・イヤー</span><span class="award-val">ノミネート</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span class="footer-logo">MF</span>
+    <span class="footer-copy">© 2026 Masakazu Fuchigami. All rights reserved.</span>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
