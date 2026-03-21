@@ -1,0 +1,209 @@
+<style>
+  .anim-card {
+    background: #111318;
+    border: 1px solid #1e2535;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    margin-bottom: 16px;
+  }
+  .anim-card:hover { border-color: #3a4a6a; }
+  .anim-card.selected-card { border-color: #5a7aaa !important; }
+
+  .demo-area {
+    background: #0e1018;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* A: Fade + Parallax */
+  .demo-a .layer-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #1a1d25, #0e1018);
+  }
+  .demo-a .layer-text {
+    position: relative;
+    text-align: center;
+    animation: fadeSlideUp 2s ease-out infinite alternate;
+  }
+  @keyframes fadeSlideUp {
+    from { opacity: 0.3; transform: translateY(8px); }
+    to   { opacity: 1;   transform: translateY(0px); }
+  }
+  .demo-a .grid-hint {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    opacity: 0;
+    animation: fadeIn 2s 0.5s ease-out infinite alternate;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .demo-a .grid-item {
+    flex: 1;
+    height: 40px;
+    background: linear-gradient(135deg, #1e2535, #141720);
+    border: 1px solid #2a3a5a22;
+  }
+
+  /* B: Text reveal mask */
+  .demo-b .mask-text {
+    overflow: hidden;
+    line-height: 1;
+  }
+  .demo-b .mask-inner {
+    display: block;
+    animation: revealUp 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite alternate;
+  }
+  @keyframes revealUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0%);   opacity: 1; }
+  }
+  .demo-b .line2 .mask-inner { animation-delay: 0.15s; }
+  .demo-b .line3 .mask-inner { animation-delay: 0.3s; font-size: 11px !important; color: #3a4a6a !important; }
+  .demo-b .hover-block {
+    position: absolute;
+    right: 24px;
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(135deg, #1e2535, #141720);
+    border: 1px solid #2a3a5a33;
+    animation: hoverScale 2s ease-in-out infinite alternate;
+  }
+  @keyframes hoverScale {
+    from { transform: scale(1); }
+    to   { transform: scale(1.05); }
+  }
+
+  /* C: Cursor + stagger */
+  .demo-c .cursor-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #5a7aaa;
+    animation: cursorMove 3s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  @keyframes cursorMove {
+    0%   { left: 30%; top: 40%; }
+    33%  { left: 60%; top: 30%; }
+    66%  { left: 50%; top: 60%; }
+    100% { left: 30%; top: 40%; }
+  }
+  .demo-c .cursor-ring {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #3a4a6a;
+    animation: cursorMove 3s 0.1s ease-in-out infinite;
+    opacity: 0.4;
+    transform: translate(-50%, -50%);
+  }
+  .demo-c .stagger-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 16px;
+    width: 100%;
+  }
+  .demo-c .sg-item {
+    height: 50px;
+    background: linear-gradient(135deg, #1e2535, #141720);
+    border: 1px solid #2a3a5a22;
+    animation: staggerIn 2s ease-out infinite alternate;
+  }
+  .demo-c .sg-item:nth-child(1) { animation-delay: 0s; }
+  .demo-c .sg-item:nth-child(2) { animation-delay: 0.1s; }
+  .demo-c .sg-item:nth-child(3) { animation-delay: 0.2s; }
+  .demo-c .sg-item:nth-child(4) { animation-delay: 0.3s; }
+  .demo-c .sg-item:nth-child(5) { animation-delay: 0.15s; }
+  .demo-c .sg-item:nth-child(6) { animation-delay: 0.25s; }
+  .demo-c .sg-item:nth-child(7) { animation-delay: 0.35s; }
+  .demo-c .sg-item:nth-child(8) { animation-delay: 0.45s; }
+  @keyframes staggerIn {
+    from { opacity: 0.2; transform: translateY(6px); }
+    to   { opacity: 1;   transform: translateY(0); }
+  }
+
+  .card-desc { padding: 16px; }
+  .card-desc h3 { font-size: 14px; color: #e8eaf0; margin: 0 0 6px; font-weight: 400; }
+  .card-desc p  { font-size: 12px; color: #4a5568; margin: 0; line-height: 1.6; }
+</style>
+
+<h2>アニメーションの質感 — どれが好みですか？</h2>
+<p class="subtitle">スクロール・ホバー・表示タイミングの演出スタイル</p>
+
+<div class="anim-card" data-choice="fade-parallax" onclick="toggleSelect(this); this.classList.toggle('selected-card')">
+  <div class="demo-area demo-a">
+    <div class="layer-bg"></div>
+    <div class="layer-text">
+      <div style="font-size:9px;letter-spacing:4px;color:#3a4a6a;margin-bottom:6px;">CREATIVE DIRECTOR</div>
+      <div style="font-size:20px;font-weight:200;color:#e8eaf0;letter-spacing:2px;">MASAKAZU FUCHIGAMI</div>
+    </div>
+    <div class="grid-hint">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+  </div>
+  <div class="card-desc">
+    <h3>A — フェード＋スクロールフェードイン</h3>
+    <p>スクロールで各要素がふわっと浮かび上がる。シンプルで上品。速度・イージングにこだわり「静けさの中の動き」を演出。jiii-atelier に近い静謐感。</p>
+  </div>
+</div>
+
+<div class="anim-card" data-choice="text-reveal" onclick="toggleSelect(this); this.classList.toggle('selected-card')">
+  <div class="demo-area demo-b">
+    <div style="padding: 0 24px; position: relative; z-index:1; flex:1;">
+      <div class="mask-text line1" style="margin-bottom:4px;">
+        <span class="mask-inner" style="font-size:22px;font-weight:200;color:#e8eaf0;letter-spacing:2px;">MASAKAZU</span>
+      </div>
+      <div class="mask-text line2" style="margin-bottom:8px;">
+        <span class="mask-inner" style="font-size:22px;font-weight:200;color:#e8eaf0;letter-spacing:2px;">FUCHIGAMI</span>
+      </div>
+      <div class="mask-text line3">
+        <span class="mask-inner" style="font-size:11px;letter-spacing:3px;">Creative Director</span>
+      </div>
+    </div>
+    <div class="hover-block"></div>
+  </div>
+  <div class="card-desc">
+    <h3>B — テキストリビール＋ホバーズーム</h3>
+    <p>文字がマスクの中から滑り出すエディトリアルな演出。グリッドのサムネイルにホバーすると拡大＋オーバーレイ表示。タイポグラフィへのこだわりを見せる。</p>
+  </div>
+</div>
+
+<div class="anim-card" data-choice="stagger-cursor" onclick="toggleSelect(this); this.classList.toggle('selected-card')">
+  <div class="demo-area demo-c">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+    <div class="stagger-grid">
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+      <div class="sg-item"></div>
+    </div>
+  </div>
+  <div class="card-desc">
+    <h3>C — スタガー＋カスタムカーソル</h3>
+    <p>グリッドアイテムが時間差で次々と現れるスタガーアニメーション。カスタムカーソルがポインタを追いかける。インタラクティブで現代的な印象。</p>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:8px;">クリックして選択（複数可）→ ターミナルで教えてください</p>

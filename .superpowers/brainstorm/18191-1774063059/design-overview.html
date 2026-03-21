@@ -1,0 +1,353 @@
+<style>
+  * { box-sizing: border-box; }
+  .page-mock {
+    background: #111318;
+    border: 1px solid #1e2535;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 24px;
+  }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #3a4a6a;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-bottom: 1px solid #1e2535;
+    background: #0e1018;
+  }
+  .section-body { padding: 0; }
+
+  /* Header */
+  .mock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #1e2535;
+    background: #111318cc;
+  }
+  .mock-logo { font-size: 10px; letter-spacing: 4px; color: #e8eaf0; font-weight: 300; }
+  .mock-nav { display: flex; gap: 16px; }
+  .mock-nav span { font-size: 8px; letter-spacing: 2px; color: #3a4a6a; }
+
+  /* Hero */
+  .mock-hero {
+    padding: 40px 20px 32px;
+    background: linear-gradient(160deg, #1a1d25 0%, #0e1018 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .mock-hero-eyebrow { font-size: 8px; letter-spacing: 5px; color: #3a4a6a; margin-bottom: 10px; }
+  .mock-hero-name { font-size: 32px; font-weight: 200; color: #e8eaf0; letter-spacing: 3px; line-height: 1.05; margin-bottom: 14px; }
+  .mock-hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .mock-hero-tag { font-size: 7px; letter-spacing: 2px; color: #4a5568; border: 1px solid #2a3a5a; padding: 3px 8px; }
+  .mock-awards {
+    display: flex; gap: 20px;
+  }
+  .mock-award-item { }
+  .mock-award-num { font-size: 20px; font-weight: 200; color: #5a7aaa; }
+  .mock-award-label { font-size: 7px; letter-spacing: 1px; color: #3a4a6a; margin-top: 2px; }
+  .mock-hero-deco {
+    position: absolute; right: -30px; top: -30px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid #1e253540;
+  }
+  .mock-hero-deco2 {
+    position: absolute; right: 20px; top: 20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 1px solid #2a3a5a30;
+  }
+
+  /* Filter bar */
+  .mock-filter {
+    padding: 12px 20px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #1e2535;
+    overflow-x: auto;
+    background: #0e1018;
+  }
+  .mock-filter-btn {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #3a4a6a;
+    padding: 4px 10px;
+    border: 1px solid #2a3a5a44;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .mock-filter-btn.active { color: #e8eaf0; border-color: #5a7aaa; }
+
+  /* Grid */
+  .mock-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1e2535;
+  }
+  .mock-grid-item {
+    background: #111318;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .mock-grid-item .item-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1d25, #0e1018);
+  }
+  .mock-grid-item .item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #0e101880 0%, transparent 60%);
+  }
+  .mock-grid-item .item-info {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+  }
+  .item-category { font-size: 6px; letter-spacing: 3px; color: #5a7aaa; margin-bottom: 3px; text-transform: uppercase; }
+  .item-name { font-size: 9px; font-weight: 300; color: #e8eaf0; letter-spacing: 1px; }
+  .item-role { font-size: 6px; color: #3a4a6a; margin-top: 2px; }
+
+  /* Large item */
+  .mock-grid-item.large {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    min-height: 100px;
+  }
+
+  /* About section */
+  .mock-about {
+    padding: 28px 20px;
+    border-top: 1px solid #1e2535;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .about-left { flex: 1; }
+  .about-name { font-size: 16px; font-weight: 200; color: #e8eaf0; letter-spacing: 2px; margin-bottom: 6px; }
+  .about-title { font-size: 8px; letter-spacing: 3px; color: #3a4a6a; margin-bottom: 12px; }
+  .about-desc { font-size: 9px; color: #4a5568; line-height: 1.8; }
+  .about-right { flex: 1; }
+  .award-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #1e2535; }
+  .award-name { font-size: 8px; color: #4a5568; }
+  .award-val { font-size: 8px; color: #5a7aaa; }
+
+  /* Footer */
+  .mock-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #1e2535;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0e1018;
+  }
+  .footer-logo { font-size: 9px; letter-spacing: 4px; color: #3a4a6a; }
+  .footer-copy { font-size: 7px; color: #2a3a5a; }
+
+  /* Cursor demo */
+  .cursor-demo {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5a7aaa;
+    box-shadow: 0 0 0 10px #5a7aaa18, 0 0 0 1px #3a4a6a;
+    vertical-align: middle;
+    margin-right: 6px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 10px #5a7aaa18, 0 0 0 1px #3a4a6a; }
+    50% { box-shadow: 0 0 0 16px #5a7aaa08, 0 0 0 1px #5a7aaa; }
+  }
+
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table td { padding: 8px 12px; font-size: 11px; border-bottom: 1px solid #1e2535; }
+  .spec-table td:first-child { color: #4a5568; width: 140px; font-size: 10px; letter-spacing: 1px; }
+  .spec-table td:last-child { color: #e8eaf0; }
+  .color-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+</style>
+
+<h2>デザイン全体設計 — 確認してください</h2>
+<p class="subtitle">ページ構造・カラー・タイポグラフィ・アニメーション仕様</p>
+
+<!-- Page mockup -->
+<div class="page-mock">
+  <div class="section-label">ページ全体モックアップ（縮小）</div>
+  <div class="section-body">
+
+    <!-- Header -->
+    <div class="mock-header">
+      <div class="mock-logo">MASAKAZU FUCHIGAMI</div>
+      <div class="mock-nav">
+        <span>実績</span>
+        <span>プロフィール</span>
+        <span>受賞歴</span>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="mock-hero">
+      <div class="mock-hero-deco"></div>
+      <div class="mock-hero-deco2"></div>
+      <div class="mock-hero-eyebrow">CREATIVE DIRECTOR</div>
+      <div class="mock-hero-name">MASAKAZU<br>FUCHIGAMI</div>
+      <div class="mock-hero-tags">
+        <span class="mock-hero-tag">ブランディング</span>
+        <span class="mock-hero-tag">ビジョニング</span>
+        <span class="mock-hero-tag">統合型コミュニケーション</span>
+        <span class="mock-hero-tag">UI/UX</span>
+        <span class="mock-hero-tag">コンセプト開発</span>
+      </div>
+      <div class="mock-awards">
+        <div class="mock-award-item">
+          <div class="mock-award-num">11+</div>
+          <div class="mock-award-label">受賞・ノミネート</div>
+        </div>
+        <div class="mock-award-item">
+          <div class="mock-award-num">37+</div>
+          <div class="mock-award-label">プロジェクト</div>
+        </div>
+        <div class="mock-award-item">
+          <div class="mock-award-num">GOOD<br>DESIGN</div>
+          <div class="mock-award-label">金賞・Best100</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="mock-filter">
+      <div class="mock-filter-btn active">ALL</div>
+      <div class="mock-filter-btn">ブランディング</div>
+      <div class="mock-filter-btn">UI/UX</div>
+      <div class="mock-filter-btn">広告・CM</div>
+      <div class="mock-filter-btn">映像</div>
+      <div class="mock-filter-btn">空間・サイン</div>
+      <div class="mock-filter-btn">WEB</div>
+    </div>
+
+    <!-- Grid -->
+    <div class="mock-grid">
+      <div class="mock-grid-item large">
+        <div class="item-bg" style="background:linear-gradient(135deg,#1e2535,#141720);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">UI/UX · WEB</div>
+          <div class="item-name">SHIFT — ワスレナイ</div>
+          <div class="item-role">クリエイティブディレクター</div>
+        </div>
+      </div>
+      <div class="mock-grid-item">
+        <div class="item-bg" style="background:linear-gradient(135deg,#1a2030,#111318);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">ブランディング</div>
+          <div class="item-name">WOOMS</div>
+          <div class="item-role">小田急電鉄</div>
+        </div>
+      </div>
+      <div class="mock-grid-item">
+        <div class="item-bg" style="background:linear-gradient(135deg,#161920,#0e1018);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">ブランディング</div>
+          <div class="item-name">EMot</div>
+          <div class="item-role">MaaSアプリ</div>
+        </div>
+      </div>
+      <div class="mock-grid-item">
+        <div class="item-bg" style="background:linear-gradient(135deg,#1a1d25,#0e1018);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">UI/UX</div>
+          <div class="item-name">天才くん</div>
+          <div class="item-role">SHIFT</div>
+        </div>
+      </div>
+      <div class="mock-grid-item">
+        <div class="item-bg" style="background:linear-gradient(135deg,#18202e,#0e1018);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">広告・CM</div>
+          <div class="item-name">ロマンスカー</div>
+          <div class="item-role">小田急電鉄</div>
+        </div>
+      </div>
+      <div class="mock-grid-item">
+        <div class="item-bg" style="background:linear-gradient(135deg,#161a22,#0e1018);"></div>
+        <div class="item-overlay"></div>
+        <div class="item-info">
+          <div class="item-category">映像・WEB</div>
+          <div class="item-name">江ノ電キャンペーン</div>
+          <div class="item-role">3年連続</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="mock-about">
+      <div class="about-left">
+        <div class="about-name">MASAKAZU FUCHIGAMI</div>
+        <div class="about-title">CREATIVE DIRECTOR</div>
+        <div class="about-desc">
+          ブランディング・ビジョニングを軸に、<br>
+          統合型コミュニケーションデザインを手がける。<br>
+          戦略からコンセプト、アイデンティティ開発まで<br>
+          一貫してディレクションを行う。
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="award-row"><span class="award-name">ACC TOKYO CREATIVITY AWARDS</span><span class="award-val">シルバー</span></div>
+        <div class="award-row"><span class="award-name">GOOD DESIGN AWARD</span><span class="award-val">金賞・Best100</span></div>
+        <div class="award-row"><span class="award-name">SDA Award</span><span class="award-val">ゴールド</span></div>
+        <div class="award-row"><span class="award-name">日本空間デザイン賞</span><span class="award-val">ブロンズ</span></div>
+        <div class="award-row"><span class="award-name">国土交通大臣賞</span><span class="award-val">観光ポスター</span></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mock-footer">
+      <div class="footer-logo">MF</div>
+      <div class="footer-copy">© 2026 Masakazu Fuchigami</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Specs -->
+<div class="page-mock">
+  <div class="section-label">カラー・タイポグラフィ仕様</div>
+  <table class="spec-table">
+    <tr><td>背景（メイン）</td><td><span class="color-swatch" style="background:#111318;border:1px solid #2a3a5a;"></span>#111318</td></tr>
+    <tr><td>背景（サブ）</td><td><span class="color-swatch" style="background:#0e1018;border:1px solid #2a3a5a;"></span>#0e1018</td></tr>
+    <tr><td>ボーダー</td><td><span class="color-swatch" style="background:#1e2535;border:1px solid #2a3a5a;"></span>#1e2535</td></tr>
+    <tr><td>テキスト（主）</td><td><span class="color-swatch" style="background:#e8eaf0;"></span>#e8eaf0</td></tr>
+    <tr><td>テキスト（副）</td><td><span class="color-swatch" style="background:#4a5568;"></span>#4a5568</td></tr>
+    <tr><td>アクセント</td><td><span class="color-swatch" style="background:#5a7aaa;"></span>#5a7aaa（ブルーグレー）</td></tr>
+    <tr><td>日本語フォント</td><td>Noto Sans JP（weight: 300, 100）</td></tr>
+    <tr><td>欧文フォント</td><td>Inter / Helvetica Neue（letter-spacing: wide）</td></tr>
+  </table>
+</div>
+
+<div class="page-mock">
+  <div class="section-label">アニメーション仕様</div>
+  <table class="spec-table">
+    <tr><td>カスタムカーソル</td><td><span class="cursor-demo"></span>小ドット（6px）＋遅延リング（30px）、lerp追従</td></tr>
+    <tr><td>ページロード</td><td>ヒーロー要素がスタガーでフェードイン（0.1s刻み）</td></tr>
+    <tr><td>スクロール連動</td><td>IntersectionObserver でグリッドアイテムが時間差フェードアップ</td></tr>
+    <tr><td>フィルター切替</td><td>GSAP FLIP — アイテムが滑らかに並び替え</td></tr>
+    <tr><td>グリッドホバー</td><td>サムネイル拡大（scale 1.05）＋カテゴリ・タイトルオーバーレイ</td></tr>
+    <tr><td>ライブラリ</td><td>GSAP（ScrollTrigger, Flip）+ 純粋なJS/CSS</td></tr>
+  </table>
+</div>
+
+<p class="subtitle">この設計でよければ「OK」、変えたい部分があればお知らせください</p>

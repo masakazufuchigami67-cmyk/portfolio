@@ -1,0 +1,134 @@
+<h2>レイアウト構造 — どのスタイルが近いですか？</h2>
+<p class="subtitle">ポートフォリオ全体のナビゲーション・閲覧体験の方向性</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="cinematic" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#111318;min-height:260px;font-family:'Helvetica Neue',sans-serif;position:relative;overflow:hidden;">
+      <!-- Cinematic full-screen scroll mockup -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;">
+        <!-- Nav -->
+        <div style="padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e2535;">
+          <span style="font-size:8px;letter-spacing:3px;color:#e8eaf0;">MF</span>
+          <div style="display:flex;gap:12px;">
+            <span style="font-size:7px;letter-spacing:2px;color:#3a4a6a;">WORK</span>
+            <span style="font-size:7px;letter-spacing:2px;color:#3a4a6a;">ABOUT</span>
+          </div>
+        </div>
+        <!-- Hero full-bleed -->
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(160deg,#1a1d25 0%,#0e1018 100%);">
+          <div style="text-align:center;">
+            <div style="font-size:7px;letter-spacing:4px;color:#3a4a6a;margin-bottom:8px;text-transform:uppercase;">01 / SHIFT — ワスレナイ</div>
+            <div style="font-size:18px;font-weight:200;color:#e8eaf0;letter-spacing:1px;">Creative Direction</div>
+            <div style="font-size:18px;font-weight:200;color:#e8eaf0;letter-spacing:1px;">UI/UX Design</div>
+          </div>
+          <!-- Decorative elements suggesting the project image fills screen -->
+          <div style="position:absolute;inset:0;border:1px solid #1e253520;margin:16px;"></div>
+          <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-size:7px;color:#2a3a5a;letter-spacing:2px;">SCROLL ↓</div>
+        </div>
+        <!-- Peek of next section -->
+        <div style="height:30px;background:#0e1018;border-top:1px solid #1e2535;display:flex;align-items:center;padding:0 20px;">
+          <span style="font-size:6px;letter-spacing:3px;color:#2a3a5a;">02 / 天才くん — AI TOOL</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — シネマティック縦スクロール</h3>
+      <p>1プロジェクト＝1画面を占める大きな体験。スクロールのたびに次の作品が現れる。jiii-atelier.comに最も近いアプローチ。没入感が高い。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="grid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#111318;min-height:260px;font-family:'Helvetica Neue',sans-serif;position:relative;overflow:hidden;">
+      <!-- Grid layout mockup -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:14px;">
+        <!-- Nav -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <span style="font-size:8px;letter-spacing:3px;color:#e8eaf0;">MF</span>
+          <div style="display:flex;gap:8px;">
+            <span style="font-size:6px;letter-spacing:2px;color:#3a4a6a;padding:3px 6px;border:1px solid #2a3a5a;">ALL</span>
+            <span style="font-size:6px;letter-spacing:2px;color:#2a3a5a;">BRAND</span>
+            <span style="font-size:6px;letter-spacing:2px;color:#2a3a5a;">UI/UX</span>
+            <span style="font-size:6px;letter-spacing:2px;color:#2a3a5a;">AD</span>
+          </div>
+        </div>
+        <!-- Grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;flex:1;">
+          <div style="background:linear-gradient(135deg,#1e2535,#141720);border:1px solid #2a3a5a22;display:flex;align-items:flex-end;padding:8px;position:relative;min-height:70px;">
+            <div>
+              <div style="font-size:6px;color:#3a4a6a;letter-spacing:2px;">SHIFT</div>
+              <div style="font-size:8px;color:#e8eaf0;font-weight:300;">ワスレナイ</div>
+            </div>
+          </div>
+          <div style="background:linear-gradient(135deg,#1a2030,#111318);border:1px solid #2a3a5a22;display:flex;align-items:flex-end;padding:8px;min-height:70px;">
+            <div>
+              <div style="font-size:6px;color:#3a4a6a;letter-spacing:2px;">M3</div>
+              <div style="font-size:8px;color:#e8eaf0;font-weight:300;">EBHS</div>
+            </div>
+          </div>
+          <div style="background:linear-gradient(135deg,#1a1d25,#0e1018);border:1px solid #2a3a5a22;display:flex;align-items:flex-end;padding:8px;min-height:70px;grid-column:span 2;">
+            <div>
+              <div style="font-size:6px;color:#3a4a6a;letter-spacing:2px;">小田急電鉄</div>
+              <div style="font-size:8px;color:#e8eaf0;font-weight:300;">WOOMS Branding</div>
+            </div>
+          </div>
+          <div style="background:linear-gradient(135deg,#161920,#0e1018);border:1px solid #2a3a5a22;display:flex;align-items:flex-end;padding:8px;min-height:50px;">
+            <div style="font-size:7px;color:#e8eaf0;font-weight:300;">EMot</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#161920,#0e1018);border:1px solid #2a3a5a22;display:flex;align-items:flex-end;padding:8px;min-height:50px;">
+            <div style="font-size:7px;color:#e8eaf0;font-weight:300;">ロマンスカー</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — フィルタブルグリッド</h3>
+      <p>全作品をグリッドで一覧表示。カテゴリ（ブランディング/UI/UX/広告etc）でフィルタリング可能。作品数の多さを活かした俯瞰感。クリックで詳細展開。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="hybrid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#111318;min-height:260px;font-family:'Helvetica Neue',sans-serif;position:relative;overflow:hidden;">
+      <!-- Hybrid: hero + grid -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;">
+        <!-- Nav -->
+        <div style="padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e2535;">
+          <span style="font-size:8px;letter-spacing:3px;color:#e8eaf0;">MF</span>
+          <div style="display:flex;gap:10px;">
+            <span style="font-size:6px;letter-spacing:2px;color:#3a4a6a;">WORK</span>
+            <span style="font-size:6px;letter-spacing:2px;color:#3a4a6a;">ABOUT</span>
+            <span style="font-size:6px;letter-spacing:2px;color:#3a4a6a;">CONTACT</span>
+          </div>
+        </div>
+        <!-- Hero: name + tagline -->
+        <div style="padding:16px;background:linear-gradient(160deg,#1a1d25 0%,#0e1018 100%);">
+          <div style="font-size:7px;letter-spacing:4px;color:#3a4a6a;margin-bottom:6px;">CREATIVE DIRECTOR</div>
+          <div style="font-size:20px;font-weight:200;color:#e8eaf0;letter-spacing:2px;">MASAKAZU<br>FUCHIGAMI</div>
+          <div style="margin-top:8px;font-size:7px;color:#2a3a5a;letter-spacing:1px;">Branding · Strategy · UI/UX · Campaign</div>
+        </div>
+        <!-- Featured work: horizontal scroll hint -->
+        <div style="padding:10px 16px;flex:1;">
+          <div style="font-size:6px;letter-spacing:3px;color:#3a4a6a;margin-bottom:8px;">SELECTED WORK</div>
+          <div style="display:flex;gap:6px;overflow:hidden;">
+            <div style="min-width:90px;height:55px;background:linear-gradient(135deg,#1e2535,#141720);border:1px solid #2a3a5a33;display:flex;align-items:flex-end;padding:6px;">
+              <div style="font-size:7px;color:#e8eaf0;">ワスレナイ</div>
+            </div>
+            <div style="min-width:90px;height:55px;background:linear-gradient(135deg,#1a2030,#111318);border:1px solid #2a3a5a33;display:flex;align-items:flex-end;padding:6px;">
+              <div style="font-size:7px;color:#e8eaf0;">WOOMS</div>
+            </div>
+            <div style="min-width:90px;height:55px;background:linear-gradient(135deg,#161920,#0e1018);border:1px solid #2a3a5a33;display:flex;align-items:flex-end;padding:6px;">
+              <div style="font-size:7px;color:#e8eaf0;">EMot</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — ヒーロー＋横スクロール特集</h3>
+      <p>トップにプロフィール・インパクトのあるヒーロー。下に注目作品を横スクロールで展示。その下にグリッドで全作品。動きと閲覧しやすさのバランス型。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:24px;">クリックして選択 → ターミナルで教えてください</p>

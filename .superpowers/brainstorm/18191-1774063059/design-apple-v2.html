@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Preview — Apple Quality</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #080a10;
+    color: #f0f2f8;
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: #f0f2f8;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: #3a4a6a;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+  }
+
+  /* ===== BROWSER FRAME ===== */
+  .browser-frame {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ffffff0f;
+    box-shadow: 0 40px 80px #00000080, 0 0 0 1px #ffffff06;
+  }
+  .browser-chrome {
+    background: #1c1e26;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #ffffff08;
+  }
+  .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .browser-url {
+    flex: 1;
+    background: #ffffff08;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 9px;
+    color: #4a5568;
+    letter-spacing: 1px;
+    margin: 0 8px;
+  }
+
+  /* ===== PAGE ===== */
+  .page { background: #090c14; min-height: 600px; }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    background: rgba(9, 12, 20, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    z-index: 10;
+  }
+  .site-logo {
+    font-size: 11px;
+    letter-spacing: 5px;
+    font-weight: 300;
+    color: #f0f2f8;
+  }
+  .site-nav { display: flex; gap: 28px; }
+  .site-nav a {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 32px 64px;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, #111d3a 0%, #090c14 70%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3a5aaa40, transparent);
+  }
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: #5a7aaa;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero-name {
+    font-size: 56px;
+    font-weight: 100;
+    letter-spacing: 4px;
+    line-height: 1.0;
+    color: #f0f2f8;
+    margin-bottom: 32px;
+  }
+  .hero-name span { display: block; }
+  .hero-name .last { color: rgba(240,242,248,0.5); }
+
+  .hero-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .hero-tag {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #6a8aaa;
+    border: 1px solid rgba(90, 122, 170, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(90, 122, 170, 0.06);
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat-num {
+    font-size: 36px;
+    font-weight: 100;
+    color: #f0f2f8;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #3a4a6a;
+    margin-top: 6px;
+    text-transform: uppercase;
+  }
+
+  /* Decorative orb */
+  .hero-orb {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(60,90,160,0.15) 0%, transparent 70%);
+    border: 1px solid rgba(90,122,170,0.08);
+  }
+  .hero-orb::after {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(90,122,170,0.05);
+  }
+
+  /* Filter */
+  .filter-bar {
+    padding: 0 32px;
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(9,12,20,0.8);
+    backdrop-filter: blur(12px);
+    overflow-x: auto;
+  }
+  .filter-btn {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #3a4a6a;
+    padding: 14px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .filter-btn.active {
+    color: #f0f2f8;
+    border-bottom-color: #5a7aaa;
+  }
+
+  /* Grid */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+    padding: 1px;
+  }
+  .grid-item {
+    background: #090c14;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+  .grid-item.wide {
+    grid-column: span 2;
+    aspect-ratio: auto;
+    min-height: 220px;
+  }
+  .grid-item-bg {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .grid-item:hover .grid-item-bg { transform: scale(1.04); }
+
+  .grid-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(9,12,20,0.9) 0%, rgba(9,12,20,0.2) 50%, transparent 100%);
+  }
+  .grid-item-glass {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  }
+  .grid-item-info {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+  }
+  .gi-cat {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #5a7aaa;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .gi-name {
+    font-size: 14px;
+    font-weight: 300;
+    color: #f0f2f8;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+  }
+  .gi-client {
+    font-size: 9px;
+    color: rgba(240,242,248,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* Glass card for About */
+  .about-section {
+    padding: 64px 32px;
+    background: radial-gradient(ellipse 60% 80% at 100% 50%, #0d1828 0%, #090c14 60%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .about-name-block {}
+  .about-name-jp { font-size: 11px; letter-spacing: 4px; color: #3a4a6a; margin-bottom: 12px; }
+  .about-name-en { font-size: 32px; font-weight: 100; color: #f0f2f8; letter-spacing: 3px; line-height: 1.1; margin-bottom: 24px; }
+  .about-body { font-size: 11px; color: rgba(240,242,248,0.4); line-height: 2.2; letter-spacing: 0.5px; }
+
+  .award-glass {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(20px);
+  }
+  .award-title {
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: #3a4a6a;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .award-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .award-name { font-size: 10px; color: rgba(240,242,248,0.5); letter-spacing: 0.5px; }
+  .award-val { font-size: 9px; color: #5a7aaa; letter-spacing: 1px; }
+
+  /* Footer */
+  .site-footer {
+    padding: 32px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080a10;
+  }
+  .footer-logo { font-size: 10px; letter-spacing: 5px; color: #2a3a5a; }
+  .footer-copy { font-size: 9px; color: #1e2535; }
+
+  /* Note */
+  .design-note {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: rgba(90,122,170,0.06);
+    border: 1px solid rgba(90,122,170,0.15);
+    border-radius: 8px;
+    font-size: 11px;
+    color: #6a8aaa;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+  .design-note strong { color: #9ab0d0; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<h2>Apple Quality — Dark Portfolio</h2>
+<p class="subtitle">更新デザイン確認 — ガラス質感・メリハリ・透明感</p>
+
+<div class="browser-frame">
+  <div class="browser-chrome">
+    <div class="browser-dot" style="background:#ff5f57;"></div>
+    <div class="browser-dot" style="background:#febc2e;"></div>
+    <div class="browser-dot" style="background:#28c840;"></div>
+    <div class="browser-url">fuchigami-creative.jp</div>
+  </div>
+  <div class="page">
+
+    <!-- Header -->
+    <div class="site-header">
+      <div class="site-logo">MASAKAZU FUCHIGAMI</div>
+      <nav class="site-nav">
+        <a href="#">実績</a>
+        <a href="#">プロフィール</a>
+        <a href="#">受賞歴</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-orb"></div>
+      <div class="hero-eyebrow">Creative Director</div>
+      <div class="hero-name">
+        <span>MASAKAZU</span>
+        <span class="last">FUCHIGAMI</span>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">ブランディング</span>
+        <span class="hero-tag">ビジョニング</span>
+        <span class="hero-tag">統合型コミュニケーション</span>
+        <span class="hero-tag">UI/UX デザイン</span>
+        <span class="hero-tag">コンセプト開発</span>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">11<span style="font-size:20px;color:#3a4a6a;">+</span></div>
+          <div class="stat-label">受賞・ノミネート</div>
+        </div>
+        <div>
+          <div class="stat-num">37<span style="font-size:20px;color:#3a4a6a;">+</span></div>
+          <div class="stat-label">プロジェクト</div>
+        </div>
+        <div>
+          <div class="stat-num" style="font-size:20px;line-height:1.3;">GOOD<br>DESIGN</div>
+          <div class="stat-label">金賞 · Best100</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn active">ALL</button>
+      <button class="filter-btn">ブランディング</button>
+      <button class="filter-btn">UI / UX</button>
+      <button class="filter-btn">広告 · CM</button>
+      <button class="filter-btn">映像</button>
+      <button class="filter-btn">空間 · サイン</button>
+      <button class="filter-btn">WEB</button>
+    </div>
+
+    <!-- Work Grid -->
+    <div class="work-grid">
+      <!-- Wide item -->
+      <div class="grid-item wide">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#0d1828 0%,#09111f 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">UI/UX · Web</div>
+          <div class="gi-name">SHIFT — ワスレナイ</div>
+          <div class="gi-client">クリエイティブディレクター · UI/UXデザイン · Webサイト</div>
+        </div>
+      </div>
+      <!-- Normal -->
+      <div class="grid-item">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#111b2a 0%,#0a0f1a 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">Branding</div>
+          <div class="gi-name">WOOMS</div>
+          <div class="gi-client">小田急電鉄</div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#0e1520 0%,#090c14 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">Brand · App</div>
+          <div class="gi-name">EMot</div>
+          <div class="gi-client">MaaSアプリ ブランド開発</div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#121a28 0%,#09101c 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">UI/UX · AI</div>
+          <div class="gi-name">天才くん</div>
+          <div class="gi-client">SHIFT — AIツール</div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#141622 0%,#0b0d18 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">広告 · CM</div>
+          <div class="gi-name">ロマンスカー</div>
+          <div class="gi-client">小田急電鉄</div>
+        </div>
+      </div>
+      <div class="grid-item wide">
+        <div class="grid-item-bg" style="background:linear-gradient(135deg,#101824 0%,#090f1c 100%);"></div>
+        <div class="grid-item-overlay"></div>
+        <div class="grid-item-glass"></div>
+        <div class="grid-item-info">
+          <div class="gi-cat">映像 · WEB · SNS</div>
+          <div class="gi-name">江ノ電で、会いにゆく。</div>
+          <div class="gi-client">江ノ島・鎌倉 観光キャンペーン 2017–2019</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="about-section">
+      <div class="about-name-block">
+        <div class="about-name-jp">クリエイティブディレクター</div>
+        <div class="about-name-en">MASAKAZU<br>FUCHIGAMI</div>
+        <div class="about-body">
+          ブランディング・ビジョニングを軸に、<br>
+          統合型コミュニケーションデザインを手がける。<br><br>
+          戦略、コンセプト、アイデンティティの開発から<br>
+          映像・UI/UX・空間まで一貫してディレクション。
+        </div>
+      </div>
+      <div class="award-glass">
+        <div class="award-title">Awards &amp; Recognition</div>
+        <div class="award-row"><span class="award-name">ACC TOKYO CREATIVITY AWARDS</span><span class="award-val">Silver</span></div>
+        <div class="award-row"><span class="award-name">GOOD DESIGN AWARD</span><span class="award-val">金賞 · Best100</span></div>
+        <div class="award-row"><span class="award-name">SDA Award</span><span class="award-val">Gold</span></div>
+        <div class="award-row"><span class="award-name">日本空間デザイン賞</span><span class="award-val">Bronze</span></div>
+        <div class="award-row"><span class="award-name">日本観光ポスターコンクール</span><span class="award-val">国土交通大臣賞</span></div>
+        <div class="award-row"><span class="award-name">JAAA クリエイティブ・オブ・ザ・イヤー</span><span class="award-val">Nominee</span></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="site-footer">
+      <div class="footer-logo">MF</div>
+      <div class="footer-copy">© 2026 Masakazu Fuchigami. All rights reserved.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="design-note">
+  <strong>Apple Quality の実装ポイント：</strong><br>
+  · <strong>Frosted glass header</strong> — backdrop-filter: blur(20px) でスクロール時に背景がにじむ<br>
+  · <strong>ラジアルグラデーション</strong> — 単色ではなく奥行きのある光の演出<br>
+  · <strong>1px の精密なボーダー</strong> — rgba(255,255,255,0.06) 極薄の線で品格を出す<br>
+  · <strong>タイポグラフィの重さの差</strong> — font-weight 100 vs 300 vs 400 のメリハリ<br>
+  · <strong>Glassmorphism カード</strong> — 受賞歴などにガラスカードを使用<br>
+  · <strong>カラー純度の高いアクセント</strong> — #5a7aaa を要所のみに限定使用
+</div>
+
+<p style="margin-top:20px;font-size:11px;color:#3a4a6a;letter-spacing:1px;">
+  この方向性でOKなら「進めて」と教えてください。仕様書を作成し実装計画に移行します。
+</p>
+
+</body>
+</html>
