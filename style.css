@@ -1,1 +1,49 @@
-/* style.css — populated in Tasks 2–9 */
+/* ===== CUSTOM PROPERTIES ===== */
+:root {
+  --bg-base:        #090c14;
+  --bg-secondary:   #080a10;
+  --bg-surface:     rgba(255, 255, 255, 0.02);
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-faint:   rgba(255, 255, 255, 0.04);
+  --text-primary:   #f0f2f8;
+  --text-secondary: rgba(240, 242, 248, 0.4);
+  --text-muted:     #4a5568;
+  --text-dim:       #3a4a6a;
+  --accent:         #5a7aaa;
+  --accent-subtle:  rgba(90, 122, 170, 0.06);
+  --accent-border:  rgba(90, 122, 170, 0.2);
+  --font-latin: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-ja:    'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ul { list-style: none; }
+a { text-decoration: none; }
+button { border: none; background: none; cursor: pointer; font: inherit; }
+
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-ja);
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: none; /* hide default cursor — custom cursor takes over */
+  overflow-x: hidden;
+}
+
+/* Restore cursor when custom cursor is not supported */
+@media (hover: none) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* Reduced motion: restore default cursor, disable custom cursor */
+@media (prefers-reduced-motion: reduce) {
+  body { cursor: auto; }
+  .cursor-dot, .cursor-ring { display: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
