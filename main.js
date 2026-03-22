@@ -262,9 +262,8 @@
 
     function makeImg(idx) {
       const img = document.createElement('img');
-      img.src     = pages[idx];
-      img.alt     = name;
-      img.loading = 'lazy';
+      img.src = pages[idx];
+      img.alt = name;
       return img;
     }
 
@@ -329,6 +328,19 @@
 
   let currentCardIndex = -1;
 
+  function preloadPages(pages) {
+    pages.forEach(url => { const i = new Image(); i.src = url; });
+  }
+
+  function preloadAdjacentCards() {
+    const cards = getVisibleCards();
+    [currentCardIndex - 1, currentCardIndex + 1].forEach(i => {
+      if (i < 0 || i >= cards.length) return;
+      const pages = (cards[i].dataset.pages || '').split(',').map(s => s.trim()).filter(Boolean);
+      preloadPages(pages);
+    });
+  }
+
   function getVisibleCards() {
     return Array.from(document.querySelectorAll('.grid-item')).filter(el => el.style.display !== 'none' && !el.classList.contains('hidden'));
   }
@@ -367,6 +379,7 @@
     requestAnimationFrame(() => overlay.classList.add('is-open'));
     document.body.style.overflow = 'hidden';
     closeBtn.focus();
+    preloadAdjacentCards();
   }
 
   function closeModal() {
@@ -380,8 +393,12 @@
     }, { once: true });
   }
 
-  // Open on card click
+  // Open on card click; preload images on hover
   document.querySelectorAll('.grid-item').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const pages = (card.dataset.pages || '').split(',').map(s => s.trim()).filter(Boolean);
+      preloadPages(pages);
+    }, { once: true });
     card.addEventListener('click', () => openModal(card));
   });
 
@@ -392,6 +409,7 @@
     currentCardIndex--;
     loadCard(cards[currentCardIndex]);
     updateNavButtons();
+    preloadAdjacentCards();
     overlay.scrollTop = 0;
   });
 
@@ -401,6 +419,7 @@
     currentCardIndex++;
     loadCard(cards[currentCardIndex]);
     updateNavButtons();
+    preloadAdjacentCards();
     overlay.scrollTop = 0;
   });
 
