@@ -262,8 +262,20 @@
 
     function makeImg(idx) {
       const img = document.createElement('img');
-      img.src = pages[idx];
       img.alt = name;
+      gsap.set(img, { opacity: 0, y: 12 });
+      const onLoad = () => {
+        gsap.to(img, {
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          ease: 'power2.out',
+          delay: idx * 0.045
+        });
+      };
+      img.addEventListener('load', onLoad, { once: true });
+      img.src = pages[idx];
+      if (img.complete) onLoad();
       return img;
     }
 
@@ -352,8 +364,6 @@
   }
 
   function loadCard(card) {
-    gallery.style.opacity = '0';
-    gallery.style.transition = 'none';
     const pages  = (card.dataset.pages || '').split(',').map(s => s.trim()).filter(Boolean);
     const proj   = parseInt(card.dataset.proj, 10);
     const cat    = card.querySelector('.item-cat')?.textContent    || '';
@@ -366,23 +376,17 @@
 
     const layout = LAYOUTS[proj] || makeDefaultLayout(pages.length);
     buildGallery(layout, pages, name, gallery);
-
-    // Decode first image before showing to avoid blank flash
-    const firstImg = gallery.querySelector('img');
-    if (firstImg) {
-      firstImg.decode().catch(() => {}).then(() => {
-        gallery.style.opacity = '1';
-      });
-    } else {
-      gallery.style.opacity = '1';
-    }
   }
 
   function loadCardWithTransition(card) {
-    gallery.style.transition = 'opacity 0.15s ease';
-    gallery.style.opacity = '0';
-    requestAnimationFrame(() => {
-      loadCard(card);
+    gsap.to(gallery, {
+      opacity: 0,
+      duration: 0.2,
+      ease: 'power2.in',
+      onComplete: () => {
+        loadCard(card);
+        gsap.set(gallery, { opacity: 1 });
+      }
     });
   }
 
