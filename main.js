@@ -43,16 +43,25 @@
 (function fitEyebrowToName() {
   function calc() {
     const eyebrow = document.querySelector('.hero-eyebrow');
-    const nameEl  = document.querySelector('.hero-name-line2');
+    const nameEl  = document.querySelector('.hero-name-line1'); // match MASAKAZU
     if (!eyebrow || !nameEl) return;
 
     const targetWidth = nameEl.offsetWidth;
     const text = eyebrow.textContent;
 
-    // Measure natural width at letter-spacing: 0
+    // Measure at letter-spacing: 0, shrink font-size until it fits within target
     const clone = eyebrow.cloneNode(true);
     clone.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;letter-spacing:0px;opacity:1;pointer-events:none;top:0;left:0;';
     document.body.appendChild(clone);
+
+    let fontSize = parseFloat(getComputedStyle(eyebrow).fontSize);
+    clone.style.fontSize = fontSize + 'px';
+    while (clone.offsetWidth > targetWidth && fontSize > 8) {
+      fontSize -= 0.5;
+      clone.style.fontSize = fontSize + 'px';
+    }
+    eyebrow.style.fontSize = fontSize + 'px';
+
     const naturalWidth = clone.offsetWidth;
     document.body.removeChild(clone);
 
