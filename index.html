@@ -18,41 +18,23 @@
   <!-- HEADER -->
   <header class="site-header" id="top">
     <div class="site-logo">MASAKAZU FUCHIGAMI</div>
-    <nav class="site-nav" aria-label="メインナビゲーション">
-      <a href="#work">実績</a>
-      <a href="#about">プロフィール</a>
-      <a href="#awards">受賞歴</a>
-    </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero" aria-label="イントロダクション">
-    <div class="hero-orb" aria-hidden="true"></div>
-    <p class="hero-eyebrow">Creative Director</p>
-    <h1 class="hero-name">
-      <span class="hero-name-line1">MASAKAZU</span>
-      <span class="hero-name-line2">FUCHIGAMI</span>
-    </h1>
-    <ul class="hero-tags" aria-label="専門領域">
-      <li>ブランディング</li>
-      <li>ビジョニング</li>
-      <li>統合型コミュニケーション</li>
-      <li>UI/UX デザイン</li>
-      <li>コンセプト開発</li>
-    </ul>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">11<span class="stat-plus">+</span></span>
-        <span class="stat-label">受賞・ノミネート</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">42<span class="stat-plus">+</span></span>
-        <span class="stat-label">プロジェクト</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num stat-num--small">GOOD<br>DESIGN</span>
-        <span class="stat-label">金賞・Best100</span>
-      </div>
+    <div class="hero-gradient" aria-hidden="true">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+      <div class="hero-blob blob-3"></div>
+      <div class="hero-blob blob-4"></div>
+      <div class="hero-blob blob-5"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Creative Director / 人間中心設計 専門家</p>
+      <h1 class="hero-name">
+        <span class="hero-name-line1">MASAKAZU</span>
+        <span class="hero-name-line2">FUCHIGAMI</span>
+      </h1>
     </div>
   </section>
 
@@ -61,95 +43,95 @@
     <button class="filter-btn active" data-filter="all" aria-pressed="true">ALL</button>
     <button class="filter-btn" data-filter="brand" aria-pressed="false">ブランディング</button>
     <button class="filter-btn" data-filter="uiux" aria-pressed="false">UI / UX</button>
-    <button class="filter-btn" data-filter="ad" aria-pressed="false">広告・CM</button>
+    <button class="filter-btn" data-filter="web" aria-pressed="false">WEB</button>
+    <button class="filter-btn" data-filter="ad" aria-pressed="false">広告</button>
     <button class="filter-btn" data-filter="film" aria-pressed="false">映像</button>
     <button class="filter-btn" data-filter="space" aria-pressed="false">空間・サイン</button>
-    <button class="filter-btn" data-filter="web" aria-pressed="false">WEB</button>
   </div>
 
   <!-- WORK GRID -->
   <main class="work-grid" id="work-grid">
 
 <!-- 1 -->
-<article class="grid-item wide" data-category="uiux web" role="article" aria-label="ワスレナイ">
-  <div class="item-bg" style="background-image:url('images/page-02.jpg');"></div>
+<article data-sizes="large,hero,small,small,small,small" data-proj="1" class="grid-item" data-category="uiux web" role="article" aria-label="ワスレナイ" data-pages="page_image/page_02/wasurenai .png">
+  <div class="item-bg" style="background-image:url('page_image/page_02/card/card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">UI/UX · Web</p>
     <h3 class="item-name">SHIFT — ワスレナイ</h3>
-    <p class="item-client">クリエイティブディレクター・UI/UXデザイン・Webサイト</p>
+    <p class="item-client">UI/UXデザイン・WEBサイト</p>
   </div>
 </article>
 
 <!-- 2 -->
-<article class="grid-item" data-category="uiux web brand" role="article" aria-label="天才くん">
-  <div class="item-bg" style="background-image:url('images/page-03.jpg');"></div>
+<article data-sizes="large,hero,large,large,large" data-proj="2" class="grid-item" data-category="uiux web brand" role="article" aria-label="天才くん" data-pages="page_image/page_03/tensaikun.png">
+  <div class="item-bg" style="background-image:url('page_image/page_03/card/card.jpg'); background-position: right center;"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">UI/UX · AI</p>
+    <p class="item-cat">UI/UX</p>
     <h3 class="item-name">SHIFT — 天才くん</h3>
-    <p class="item-client">クリエイティブディレクター・ロゴ・UI/UX</p>
+    <p class="item-client">ロゴ・UI/UXデザイン・WEBサイト・動画</p>
   </div>
 </article>
 
 <!-- 3 -->
-<article class="grid-item" data-category="uiux" role="article" aria-label="シフじぃ">
-  <div class="item-bg" style="background-image:url('images/page-04.jpg');"></div>
+<article data-sizes="hero" data-proj="3" class="grid-item" data-category="uiux" role="article" aria-label="シフじぃ" data-pages="page_image/page_04/シフじぃ.png" style="display:none">
+  <div class="item-bg" style="background-image:url('page_image/page_04/card/card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">UI/UX</p>
     <h3 class="item-name">SHIFT — シフじぃ</h3>
-    <p class="item-client">オフィスDXアプリ UI/UXデザイン</p>
+    <p class="item-client">オフィスDXアプリ UI/UX</p>
   </div>
 </article>
 
 <!-- 4 -->
-<article class="grid-item" data-category="uiux brand" role="article" aria-label="Advanced Dashboard">
-  <div class="item-bg" style="background-image:url('images/page-05.jpg');"></div>
+<article data-sizes="hero,large,small,small,small,small,hero,hero" data-proj="4" class="grid-item" data-category="uiux brand" role="article" aria-label="Advanced Dashboard" data-pages="page_image/page_05/advanced_dashboard.png">
+  <div class="item-bg" style="background-image:url('page_image/page_05/card/dashboard_panel.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">UI/UX · Service Design</p>
     <h3 class="item-name">SHIFT — Advanced Dashboard</h3>
-    <p class="item-client">クリエイティブディレクター・サービスデザイン</p>
+    <p class="item-client">サービスデザイン・UI/UXデザイン</p>
   </div>
 </article>
 
 <!-- 5 -->
-<article class="grid-item wide" data-category="brand film web" role="article" aria-label="WHITE JACK project">
-  <div class="item-bg" style="background-image:url('images/page-06.jpg');"></div>
+<article data-sizes="hero,hero,large,small,small,small,small,small,small,small,small" data-proj="5" class="grid-item" data-category="brand film web" role="article" aria-label="WHITE JACK project" data-pages="page_image/page_06/HJP.png">
+  <div class="item-bg" style="background-image:url('page_image/page_06/card/card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Film · Web</p>
     <h3 class="item-name">M3 — WHITE JACK project</h3>
-    <p class="item-client">クリエイティブディレクター</p>
+    <p class="item-client">コンセプト策定・コンセプトムービー・WEBサイト</p>
   </div>
 </article>
 
 <!-- 6 -->
-<article class="grid-item" data-category="brand web" role="article" aria-label="EBHS">
-  <div class="item-bg" style="background-image:url('images/page-07.jpg');"></div>
+<article data-sizes="hero,large,large,large,large,hero,hero,large,large,large,large" data-proj="6" class="grid-item" data-category="brand web" role="article" aria-label="EBHS" data-pages="page_image/page_07/EBHS.png">
+  <div class="item-bg" style="background-image:url('page_image/page_07/card/card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Web</p>
     <h3 class="item-name">M3 — EBHS</h3>
-    <p class="item-client">クリエイティブディレクター・ブランドガイドライン</p>
+    <p class="item-client">コンセプト策定・ブランドガイドライン・WEBサイト</p>
   </div>
 </article>
 
 <!-- 7 -->
-<article class="grid-item" data-category="ad brand" role="article" aria-label="Ask Doctors総研">
-  <div class="item-bg" style="background-image:url('images/page-08.jpg');"></div>
+<article data-sizes="large,large,large,hero,large,large,large,large,large,large,large,large,large,large,large,large,large" data-proj="7" class="grid-item" data-category="ad space" role="article" aria-label="Ask Doctors総研" data-pages="page_image/page_08/Ask.png">
+  <div class="item-bg" style="background-image:url('page_image/page_08/card/08card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">広告・CM</p>
+    <p class="item-cat">広告・空間</p>
     <h3 class="item-name">M3 — Ask Doctors総研</h3>
-    <p class="item-client">クリエイティブディレクター・動画広告・展示会</p>
+    <p class="item-client">動画広告・チラシ・展示会</p>
   </div>
 </article>
 
 <!-- 8 -->
-<article class="grid-item" data-category="brand" role="article" aria-label="お医者さんのおせんべい">
-  <div class="item-bg" style="background-image:url('images/page-09.jpg');"></div>
+<article data-sizes="hero,hero,large,large,large" data-proj="8" class="grid-item" data-category="brand" role="article" aria-label="お医者さんのおせんべい" data-pages="page_image/page_09/osenbei.png">
+  <div class="item-bg" style="background-image:url('page_image/page_09/card/09card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Naming</p>
@@ -159,30 +141,30 @@
 </article>
 
 <!-- 9 -->
-<article class="grid-item wide" data-category="brand web film space" role="article" aria-label="WOOMS">
-  <div class="item-bg" style="background-image:url('images/page-10.jpg');"></div>
+<article data-sizes="hero,large,small,small,small,small,small,small,small,small,small,small,large,large,large,large,small,large,large,small,large,large,small" data-proj="9" class="grid-item" data-category="brand web film space uiux" role="article" aria-label="WOOMS" data-pages="page_image/page_10/wooms.png">
+  <div class="item-bg" style="background-image:url('page_image/page_10/card/10card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">Branding · Web · Film · Space</p>
+    <p class="item-cat">Branding · Web · Film · Space · UI/UX</p>
     <h3 class="item-name">小田急電鉄 — WOOMS</h3>
-    <p class="item-client">ブランディング・クリエイティブディレクター</p>
+    <p class="item-client">事業戦略策定・ネーミング・コンセプト・コミュニケーションツール</p>
   </div>
 </article>
 
 <!-- 10 -->
-<article class="grid-item" data-category="brand web film" role="article" aria-label="EMot">
-  <div class="item-bg" style="background-image:url('images/page-12.jpg');"></div>
+<article data-sizes="hero,small,large,small,small,small" data-proj="10" class="grid-item" data-category="brand web film uiux" role="article" aria-label="EMot" data-pages="page_image/page_11/emot.png">
+  <div class="item-bg" style="background-image:url('page_image/page_11/card/11card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">Branding · App · Film</p>
+    <p class="item-cat">Branding · App · Film · UI/UX</p>
     <h3 class="item-name">小田急電鉄 — EMot</h3>
     <p class="item-client">MaaSアプリ ブランド開発（ネーミング・VI・映像・WEB）</p>
   </div>
 </article>
 
 <!-- 11 -->
-<article class="grid-item" data-category="brand ad film web" role="article" aria-label="小田急でんき">
-  <div class="item-bg" style="background-image:url('images/page-13.jpg');"></div>
+<article data-sizes="hero,large,small,small,large,large,small,small" data-proj="11" class="grid-item" data-category="brand ad film web" role="article" aria-label="小田急でんき" data-pages="page_image/page_12/denki.png">
+  <div class="item-bg" style="background-image:url('page_image/page_12/card/12card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · 広告 · Film</p>
@@ -192,8 +174,8 @@
 </article>
 
 <!-- 12 -->
-<article class="grid-item" data-category="brand web" role="article" aria-label="ONE オーネ">
-  <div class="item-bg" style="background-image:url('images/page-14.jpg');"></div>
+<article data-sizes="hero,large,small" data-proj="12" class="grid-item" data-category="brand web" role="article" aria-label="ONE オーネ" data-pages="page_image/page_13/one.png">
+  <div class="item-bg" style="background-image:url('page_image/page_13/card/13card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Web</p>
@@ -203,8 +185,8 @@
 </article>
 
 <!-- 13 -->
-<article class="grid-item" data-category="web" role="article" aria-label="ACT FOR SKY">
-  <div class="item-bg" style="background-image:url('images/page-15.jpg');"></div>
+<article data-sizes="hero,hero,hero,hero,hero,hero" data-proj="13" class="grid-item" data-category="web" role="article" aria-label="ACT FOR SKY" data-pages="page_image/page_14/actfs.png">
+  <div class="item-bg" style="background-image:url('page_image/page_14/card/14card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Web</p>
@@ -214,19 +196,19 @@
 </article>
 
 <!-- 14 -->
-<article class="grid-item" data-category="brand space" role="article" aria-label="登戸駅ドラえもん化">
-  <div class="item-bg" style="background-image:url('images/page-16.jpg');"></div>
+<article data-sizes="hero" data-proj="14" class="grid-item" data-category="brand space uiux" role="article" aria-label="登戸駅ドラえもん化" data-pages="page_image/page_15/dora.png">
+  <div class="item-bg" style="background-image:url('page_image/page_15/card/15card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">Branding · Space</p>
+    <p class="item-cat">Branding · Space · UI/UX</p>
     <h3 class="item-name">小田急線 登戸駅 ドラえもん化</h3>
     <p class="item-client">デザイン開発</p>
   </div>
 </article>
 
 <!-- 15 -->
-<article class="grid-item wide" data-category="brand space web" role="article" aria-label="4&2">
-  <div class="item-bg" style="background-image:url('images/page-17.jpg');"></div>
+<article data-sizes="large,hero,large,hero,large,large,large,large,large" data-proj="15" class="grid-item" data-category="brand space web" role="article" aria-label="4&2" data-pages="page_image/page_16/4and2_01.png">
+  <div class="item-bg" style="background-image:url('page_image/page_16/card/16card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Space · Web</p>
@@ -236,8 +218,8 @@
 </article>
 
 <!-- 16 -->
-<article class="grid-item" data-category="space" role="article" aria-label="4&2梅ヶ丘">
-  <div class="item-bg" style="background-image:url('images/page-18.jpg');"></div>
+<article data-sizes="hero,hero,hero,hero" data-proj="16" class="grid-item" data-category="space" role="article" aria-label="4&2梅ヶ丘" data-pages="page_image/page_17/umegaoka.png">
+  <div class="item-bg" style="background-image:url('page_image/page_17/card/17card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Space Design</p>
@@ -247,8 +229,8 @@
 </article>
 
 <!-- 17 -->
-<article class="grid-item wide" data-category="ad brand" role="article" aria-label="ロマンスカー新型デビュー">
-  <div class="item-bg" style="background-image:url('images/page-19.jpg');"></div>
+<article data-sizes="hero,hero,hero,hero,hero,hero,large,large,large,large,large,large,large,large" data-proj="17" class="grid-item" data-category="ad brand" role="article" aria-label="ロマンスカー新型デビュー" data-pages="page_image/page_18/gse.png">
+  <div class="item-bg" style="background-image:url('page_image/page_18/card/18card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Branding</p>
@@ -258,8 +240,8 @@
 </article>
 
 <!-- 18 -->
-<article class="grid-item" data-category="ad web" role="article" aria-label="はじめての、ロマンスカー">
-  <div class="item-bg" style="background-image:url('images/page-20.jpg');"></div>
+<article data-sizes="hero,large,large,hero,large,large,large,large,large" data-proj="18" class="grid-item" data-category="ad web" role="article" aria-label="はじめての、ロマンスカー" data-pages="page_image/page_19/roma.png">
+  <div class="item-bg" style="background-image:url('page_image/page_19/card/roma.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Web</p>
@@ -269,8 +251,8 @@
 </article>
 
 <!-- 19 -->
-<article class="grid-item" data-category="brand web" role="article" aria-label="箱根の森から">
-  <div class="item-bg" style="background-image:url('images/page-21.jpg');"></div>
+<article data-sizes="hero,large,small,small,small,small,hero" data-proj="19" class="grid-item" data-category="brand web" role="article" aria-label="箱根の森から" data-pages="page_image/page_20/hakoneno.png">
+  <div class="item-bg" style="background-image:url('page_image/page_20/card/20card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Web</p>
@@ -280,8 +262,8 @@
 </article>
 
 <!-- 20 -->
-<article class="grid-item" data-category="ad" role="article" aria-label="小田急ポイントカード">
-  <div class="item-bg" style="background-image:url('images/page-22.jpg');"></div>
+<article data-sizes="hero,large,large,large,large" data-proj="20" class="grid-item" data-category="ad" role="article" aria-label="小田急ポイントカード" data-pages="page_image/page_21/opcard.png">
+  <div class="item-bg" style="background-image:url('page_image/page_21/card/21card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告</p>
@@ -291,19 +273,19 @@
 </article>
 
 <!-- 21 -->
-<article class="grid-item" data-category="ad brand" role="article" aria-label="ネスレ日本 Dolce Gusto 1">
-  <div class="item-bg" style="background-image:url('images/page-23.jpg');"></div>
+<article data-sizes="hero,large,small,small,small,small,hero,small,small,small,small" data-proj="21" class="grid-item" data-category="ad" role="article" aria-label="ネスレ日本 Dolce Gusto 1" data-pages="page_image/page_22/dg.png">
+  <div class="item-bg" style="background-image:url('page_image/page_22/card/22card.png');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">広告 · Branding</p>
+    <p class="item-cat">広告</p>
     <h3 class="item-name">ネスレ日本 — Nescafé Dolce Gusto</h3>
     <p class="item-client">ポイントプログラム CRM・商品広告 デザイン開発</p>
   </div>
 </article>
 
 <!-- 22 -->
-<article class="grid-item" data-category="ad" role="article" aria-label="ネスレ日本 Dolce Gusto 2">
-  <div class="item-bg" style="background-image:url('images/page-24.jpg');"></div>
+<article data-sizes="hero,large,large,large,large" data-proj="22" class="grid-item" data-category="ad" role="article" aria-label="ネスレ日本 Dolce Gusto 2" data-pages="page_image/page_23/mb.png">
+  <div class="item-bg" style="background-image:url('page_image/page_23/card/23card.png');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告</p>
@@ -313,19 +295,19 @@
 </article>
 
 <!-- 23 -->
-<article class="grid-item" data-category="ad film" role="article" aria-label="リーフィア2021">
-  <div class="item-bg" style="background-image:url('images/page-25.jpg');"></div>
+<article data-sizes="small,hero,small,small,large,small,small,small" data-proj="23" class="grid-item" data-category="ad film" role="article" aria-label="リーフィア" data-pages="page_image/page_24/leafia01.png">
+  <div class="item-bg" style="background-image:url('page_image/page_24/card/24card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film</p>
-    <h3 class="item-name">小田急不動産 リーフィア 2021</h3>
+    <h3 class="item-name">小田急不動産 リーフィア</h3>
     <p class="item-client">コミュニケーション開発（グラフィック・ムービー）</p>
   </div>
 </article>
 
 <!-- 24 -->
-<article class="grid-item" data-category="ad film" role="article" aria-label="リーフィア">
-  <div class="item-bg" style="background-image:url('images/page-26.jpg');"></div>
+<article data-sizes="small,small,hero,small,small,small,small,small,small" data-proj="24" class="grid-item" data-category="ad film" style="display:none" role="article" aria-label="リーフィア" data-pages="page_image/page_25/leafia02.png">
+  <div class="item-bg" style="background-image:url('page_image/page_25/card/25card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film</p>
@@ -335,8 +317,8 @@
 </article>
 
 <!-- 25 -->
-<article class="grid-item wide" data-category="ad film" role="article" aria-label="HELLO NEW ODAKYU">
-  <div class="item-bg" style="background-image:url('images/page-27.jpg');"></div>
+<article data-sizes="large,hero,hero,large,hero,hero,large,large,large,large,large" data-proj="25" class="grid-item" data-category="ad film" role="article" aria-label="HELLO NEW ODAKYU" data-pages="page_image/page_26/hno.png">
+  <div class="item-bg" style="background-image:url('page_image/page_26/card/26card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film</p>
@@ -346,8 +328,8 @@
 </article>
 
 <!-- 26 -->
-<article class="grid-item" data-category="film" role="article" aria-label="企業CM 2人">
-  <div class="item-bg" style="background-image:url('images/page-28.jpg');"></div>
+<article data-sizes="large,hero,hero,large,hero,hero,hero,hero,small,hero,hero,hero,hero,hero" data-proj="26" class="grid-item" data-category="film" role="article" aria-label="企業CM 2人" data-pages="page_image/page_27/cm01.png">
+  <div class="item-bg" style="background-image:url('page_image/page_27/card/27card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Film</p>
@@ -357,8 +339,8 @@
 </article>
 
 <!-- 27 -->
-<article class="grid-item" data-category="film" role="article" aria-label="企業CM 3人">
-  <div class="item-bg" style="background-image:url('images/page-29.jpg');"></div>
+<article data-sizes="hero,hero,hero,hero,hero,hero,hero,hero,hero,hero,hero" data-proj="27" class="grid-item" data-category="film" role="article" aria-label="企業CM 3人" data-pages="page_image/page_28/cm2.png">
+  <div class="item-bg" style="background-image:url('page_image/page_28/card/28card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Film</p>
@@ -368,8 +350,8 @@
 </article>
 
 <!-- 28 -->
-<article class="grid-item" data-category="film" role="article" aria-label="企業CM 1人">
-  <div class="item-bg" style="background-image:url('images/page-30.jpg');"></div>
+<article data-sizes="hero,hero,hero,hero,hero,hero,hero,hero,hero,hero,hero,hero" data-proj="28" class="grid-item" data-category="film" role="article" aria-label="企業CM 1人" data-pages="page_image/page_29/cm3.png">
+  <div class="item-bg" style="background-image:url('page_image/page_29/card/29card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Film</p>
@@ -379,8 +361,8 @@
 </article>
 
 <!-- 29 -->
-<article class="grid-item" data-category="film web" role="article" aria-label="企業CMキャンペーンサイト">
-  <div class="item-bg" style="background-image:url('images/page-31.jpg');"></div>
+<article data-sizes="small,small,hero,small,small,small,small,small,small,small,small,small,small,small,small,small,small,small" data-proj="29" class="grid-item" data-category="film web" style="display:none" role="article" aria-label="企業CMキャンペーンサイト" data-pages="extracted_images_600dpi/page_31/page_31_01.jpg,extracted_images_600dpi/page_31/page_31_02.jpg,extracted_images_600dpi/page_31/page_31_03.jpg,extracted_images_600dpi/page_31/page_31_04.jpg,extracted_images_600dpi/page_31/page_31_05.jpg,extracted_images_600dpi/page_31/page_31_06.jpg,extracted_images_600dpi/page_31/page_31_07.jpg,extracted_images_600dpi/page_31/page_31_08.jpg,extracted_images_600dpi/page_31/page_31_09.jpg,extracted_images_600dpi/page_31/page_31_10.jpg,extracted_images_600dpi/page_31/page_31_11.jpg,extracted_images_600dpi/page_31/page_31_12.jpg,extracted_images_600dpi/page_31/page_31_13.jpg,extracted_images_600dpi/page_31/page_31_14.jpg,extracted_images_600dpi/page_31/page_31_15.jpg,extracted_images_600dpi/page_31/page_31_16.jpg,extracted_images_600dpi/page_31/page_31_17.jpg,extracted_images_600dpi/page_31/page_31_18.jpg">
+  <div class="item-bg" style="background-image:url('extracted_images_600dpi/page_31/page_31_09.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Film · Web</p>
@@ -390,8 +372,8 @@
 </article>
 
 <!-- 30 -->
-<article class="grid-item" data-category="ad" role="article" aria-label="企業広告 日経新聞">
-  <div class="item-bg" style="background-image:url('images/page-32.jpg');"></div>
+<article data-sizes="hero,hero" data-proj="30" class="grid-item" data-category="ad" role="article" aria-label="企業広告 日経新聞" data-pages="page_image/page_31/shinbun.png">
+  <div class="item-bg" style="background-image:url('page_image/page_31/card/31card.png');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告</p>
@@ -401,19 +383,19 @@
 </article>
 
 <!-- 31 -->
-<article class="grid-item" data-category="ad" role="article" aria-label="周年ビジュアル">
-  <div class="item-bg" style="background-image:url('images/page-33.jpg');"></div>
+<article data-sizes="hero,large,hero" data-proj="31" class="grid-item" data-category="ad" role="article" aria-label="周年ビジュアル" data-pages="page_image/page_32/oer.png">
+  <div class="item-bg" style="background-image:url('page_image/page_32/card/32card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告</p>
     <h3 class="item-name">小田急不動産 周年ビジュアル</h3>
-    <p class="item-client">イメージビジュアル制作</p>
+    <p class="item-client">コミュニケーション開発</p>
   </div>
 </article>
 
 <!-- 32 -->
-<article class="grid-item" data-category="ad film web" role="article" aria-label="そこまでやるの">
-  <div class="item-bg" style="background-image:url('images/page-34.jpg');"></div>
+<article data-sizes="hero,large,hero,hero,large,large,hero,hero,large" data-proj="32" class="grid-item" data-category="ad film web" style="display:none" role="article" aria-label="そこまでやるの" data-pages="extracted_images_600dpi/page_34/page_34_01.jpg,extracted_images_600dpi/page_34/page_34_02.jpg,extracted_images_600dpi/page_34/page_34_03.jpg,extracted_images_600dpi/page_34/page_34_04.jpg,extracted_images_600dpi/page_34/page_34_05.jpg,extracted_images_600dpi/page_34/page_34_06.jpg,extracted_images_600dpi/page_34/page_34_07.jpg,extracted_images_600dpi/page_34/page_34_08.jpg,extracted_images_600dpi/page_34/page_34_09.jpg">
+  <div class="item-bg" style="background-image:url('extracted_images_600dpi/page_34/page_34_09.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film · Web</p>
@@ -423,8 +405,8 @@
 </article>
 
 <!-- 33 -->
-<article class="grid-item wide" data-category="ad film web" role="article" aria-label="江ノ電2019">
-  <div class="item-bg" style="background-image:url('images/page-35.jpg');"></div>
+<article data-sizes="hero,hero,large,large,large,large,large,large,large,large,large,large,large" data-proj="33" class="grid-item" data-category="ad film web" role="article" aria-label="江ノ電2019" data-pages="page_image/page_34/eno.png">
+  <div class="item-bg" style="background-image:url('page_image/page_34/card/34card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film · Web · SNS</p>
@@ -434,8 +416,8 @@
 </article>
 
 <!-- 34 -->
-<article class="grid-item" data-category="ad film web" role="article" aria-label="江ノ電2018">
-  <div class="item-bg" style="background-image:url('images/page-36.jpg');"></div>
+<article data-sizes="hero,hero,large,large,large,large,large,large,large,large,large,large,large" data-proj="34" class="grid-item" data-category="ad film web" style="display:none" role="article" aria-label="江ノ電2018" data-pages="extracted_images_600dpi/page_36/page_36_01.jpg,extracted_images_600dpi/page_36/page_36_02.jpg,extracted_images_600dpi/page_36/page_36_03.jpg,extracted_images_600dpi/page_36/page_36_04.jpg,extracted_images_600dpi/page_36/page_36_05.jpg,extracted_images_600dpi/page_36/page_36_06.jpg,extracted_images_600dpi/page_36/page_36_07.jpg,extracted_images_600dpi/page_36/page_36_08.jpg,extracted_images_600dpi/page_36/page_36_09.jpg,extracted_images_600dpi/page_36/page_36_10.jpg,extracted_images_600dpi/page_36/page_36_11.jpg,extracted_images_600dpi/page_36/page_36_12.jpg,extracted_images_600dpi/page_36/page_36_13.jpg">
+  <div class="item-bg" style="background-image:url('extracted_images_600dpi/page_36/page_36_04.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film · Web</p>
@@ -445,8 +427,8 @@
 </article>
 
 <!-- 35 -->
-<article class="grid-item" data-category="ad film web" role="article" aria-label="江ノ電2017">
-  <div class="item-bg" style="background-image:url('images/page-37.jpg');"></div>
+<article data-sizes="hero,hero,large,large,large,large,large,large,large,large,large,large,large" data-proj="35" class="grid-item" data-category="ad film web" style="display:none" role="article" aria-label="江ノ電2017" data-pages="extracted_images_600dpi/page_37/page_37_01.jpg,extracted_images_600dpi/page_37/page_37_02.jpg,extracted_images_600dpi/page_37/page_37_03.jpg,extracted_images_600dpi/page_37/page_37_04.jpg,extracted_images_600dpi/page_37/page_37_05.jpg,extracted_images_600dpi/page_37/page_37_06.jpg,extracted_images_600dpi/page_37/page_37_07.jpg,extracted_images_600dpi/page_37/page_37_08.jpg,extracted_images_600dpi/page_37/page_37_09.jpg,extracted_images_600dpi/page_37/page_37_10.jpg,extracted_images_600dpi/page_37/page_37_11.jpg,extracted_images_600dpi/page_37/page_37_12.jpg,extracted_images_600dpi/page_37/page_37_13.jpg">
+  <div class="item-bg" style="background-image:url('extracted_images_600dpi/page_37/page_37_03.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Film · Web</p>
@@ -456,19 +438,19 @@
 </article>
 
 <!-- 36 -->
-<article class="grid-item wide" data-category="brand ad film web space" role="article" aria-label="大山キャンペーン">
-  <div class="item-bg" style="background-image:url('images/page-38.jpg');"></div>
+<article data-sizes="hero,hero,small,hero,small,small,small,small,large,large,large,hero,hero,hero,small,small,small,small,large,small,large,small,small" data-proj="36" class="grid-item" data-category="brand ad film web" role="article" aria-label="大山キャンペーン" data-pages="page_image/page_37/oyama.png">
+  <div class="item-bg" style="background-image:url('page_image/page_37/card/37card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">Branding · 広告 · Film · Web · Space</p>
+    <p class="item-cat">Branding · 広告 · Film · Web</p>
     <h3 class="item-name">大山（伊勢原市）観光キャンペーン</h3>
     <p class="item-client">「大山、ふたたび。」企画・コミュニケーション開発</p>
   </div>
 </article>
 
 <!-- 37 -->
-<article class="grid-item" data-category="space" role="article" aria-label="大山観光サイン">
-  <div class="item-bg" style="background-image:url('images/page-40.jpg');"></div>
+<article data-sizes="hero,hero,hero,small,hero,large,large,large" data-proj="37" class="grid-item" data-category="space" role="article" aria-label="大山観光サイン" data-pages="page_image/page_39/sign.png">
+  <div class="item-bg" style="background-image:url('page_image/page_39/card/39card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Space · Sign</p>
@@ -478,8 +460,8 @@
 </article>
 
 <!-- 38 -->
-<article class="grid-item" data-category="brand" role="article" aria-label="湘南GATE">
-  <div class="item-bg" style="background-image:url('images/page-41.jpg');"></div>
+<article data-sizes="hero,large,large,large,large" data-proj="38" class="grid-item" data-category="brand" role="article" aria-label="湘南GATE" data-pages="page_image/page_40/shonan.png">
+  <div class="item-bg" style="background-image:url('page_image/page_40/card/40card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Naming</p>
@@ -489,8 +471,8 @@
 </article>
 
 <!-- 39 -->
-<article class="grid-item" data-category="brand space" role="article" aria-label="新宿サザンテラス">
-  <div class="item-bg" style="background-image:url('images/page-42.jpg');"></div>
+<article data-sizes="hero,large,large,small,small,small,small" data-proj="39" class="grid-item" data-category="brand space" role="article" aria-label="新宿サザンテラス" data-pages="page_image/page_41/terace.png">
+  <div class="item-bg" style="background-image:url('page_image/page_41/card/41card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Branding · Space</p>
@@ -500,8 +482,8 @@
 </article>
 
 <!-- 40 -->
-<article class="grid-item" data-category="ad web" role="article" aria-label="小田急百貨店">
-  <div class="item-bg" style="background-image:url('images/page-43.jpg');"></div>
+<article data-sizes="hero,small" data-proj="40" class="grid-item" data-category="ad web" role="article" aria-label="小田急百貨店" data-pages="page_image/page_42/machida.png">
+  <div class="item-bg" style="background-image:url('page_image/page_42/card/42card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">広告 · Web</p>
@@ -511,19 +493,19 @@
 </article>
 
 <!-- 41 -->
-<article class="grid-item" data-category="space brand" role="article" aria-label="路線図フットマーク">
-  <div class="item-bg" style="background-image:url('images/page-44.jpg');"></div>
+<article data-sizes="hero,large,large,large,large" data-proj="41" class="grid-item" data-category="space brand uiux" role="article" aria-label="路線図フットマーク" data-pages="page_image/page_43/rosenzu.png">
+  <div class="item-bg" style="background-image:url('page_image/page_43/card/43card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
-    <p class="item-cat">Space · Branding</p>
+    <p class="item-cat">Space · Branding · UI/UX</p>
     <h3 class="item-name">小田急線 路線図・ロマンスカーフットマーク</h3>
     <p class="item-client">デザイン開発</p>
   </div>
 </article>
 
 <!-- 42 -->
-<article class="grid-item" data-category="web brand" role="article" aria-label="Satellite Train">
-  <div class="item-bg" style="background-image:url('images/page-45.jpg');"></div>
+<article data-sizes="hero,small,small,small,large,large,small" data-proj="42" class="grid-item" data-category="web brand" role="article" aria-label="Satellite Train" data-pages="page_image/page_44/train.png">
+  <div class="item-bg" style="background-image:url('page_image/page_44/card/44card.jpg');"></div>
   <div class="item-overlay"></div><div class="item-glass"></div>
   <div class="item-info">
     <p class="item-cat">Web · Branding</p>
@@ -534,39 +516,26 @@
 
   </main>
 
-  <!-- ABOUT -->
-  <section class="about-section" id="about">
-    <div class="about-bio">
-      <p class="about-eyebrow">クリエイティブディレクター</p>
-      <h2 class="about-name">MASAKAZU<br>FUCHIGAMI</h2>
-      <p class="about-body">
-        専門・得意領域：<br>
-        ブランディング、ビジョニング<br>
-        統合型コミュニケーションデザイン<br>
-        戦略、コンセプト、アイデンティティの開発
-      </p>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="プロジェクト詳細" hidden>
+    <button class="modal-prev" aria-label="前の作品" hidden>&#8249;</button>
+    <button class="modal-next" aria-label="次の作品" hidden>&#8250;</button>
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="閉じる">
+        <span aria-hidden="true">✕</span>
+      </button>
+      <div class="modal-header">
+        <p class="modal-cat" id="modal-cat"></p>
+        <h2 class="modal-name" id="modal-name"></h2>
+        <p class="modal-client" id="modal-client"></p>
+      </div>
+      <div class="modal-gallery" id="modal-gallery"></div>
     </div>
-    <div class="awards-card" id="awards">
-      <p class="awards-title">Awards &amp; Recognition</p>
-      <ul class="awards-list">
-        <li><span class="award-name">ACC TOKYO CREATIVITY AWARDS</span><span class="award-val">シルバー</span></li>
-        <li><span class="award-name">GOOD DESIGN AWARD</span><span class="award-val">金賞・Best100</span></li>
-        <li><span class="award-name">SDA Award</span><span class="award-val">ゴールド</span></li>
-        <li><span class="award-name">日本空間デザイン賞</span><span class="award-val">ブロンズ</span></li>
-        <li><span class="award-name">ディスプレイ産業賞</span><span class="award-val">優秀賞</span></li>
-        <li><span class="award-name">One Screen Film Festival</span><span class="award-val">finalist</span></li>
-        <li><span class="award-name">AD STARS</span><span class="award-val">finalist</span></li>
-        <li><span class="award-name">JAA 消費者が選んだ広告コンクール</span><span class="award-val">入賞</span></li>
-        <li><span class="award-name">観光映像大賞</span><span class="award-val">旅もじゃ賞</span></li>
-        <li><span class="award-name">日本観光ポスターコンクール</span><span class="award-val">国土交通大臣賞</span></li>
-        <li><span class="award-name">JAAA クリエイティブ・オブ・ザ・イヤー</span><span class="award-val">ノミネート</span></li>
-      </ul>
-    </div>
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <span class="footer-logo">MF</span>
     <span class="footer-copy">© 2026 Masakazu Fuchigami. All rights reserved.</span>
   </footer>
 
