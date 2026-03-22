@@ -273,7 +273,8 @@ body {
 
 .hero-content {
   display: block;
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .hero-eyebrow {
@@ -290,9 +291,9 @@ body {
 
 .hero-name {
   font-family: var(--font-latin);
-  font-size: 60px;
+  font-size: clamp(28px, 6.5vw, 60px);
   font-weight: 100;
-  letter-spacing: 4px;
+  letter-spacing: clamp(2px, 0.4vw, 4px);
   line-height: 1.0;
   margin-bottom: 36px;
   overflow: hidden;
@@ -302,7 +303,7 @@ body {
   display: block;
   color: rgba(240, 242, 248, 0.35);
   font-weight: 200;
-  letter-spacing: 7px;
+  letter-spacing: clamp(3px, 0.7vw, 7px);
   opacity: 0; /* GSAP */
 }
 
@@ -674,7 +675,6 @@ body.cursor-hover .cursor-ring {
 /* Tablet: 768px–1023px */
 @media (max-width: 1023px) {
   .hero { padding: 72px 24px 60px; }
-  .hero-name { font-size: 40px; letter-spacing: 3px; }
   .about-section { padding: 64px 32px; gap: 40px; }
   .site-footer { padding: 28px 32px; }
 
@@ -690,7 +690,6 @@ body.cursor-hover .cursor-ring {
   .site-nav { gap: 16px; }
 
   .hero { padding: 56px 20px 48px; }
-  .hero-name { font-size: 32px; letter-spacing: 2px; }
   .hero-gradient { opacity: 0.6; }
   .hero-stats { gap: 28px; }
   .stat-num { font-size: 30px; }

@@ -56,7 +56,7 @@
     const naturalWidth = clone.offsetWidth;
     document.body.removeChild(clone);
 
-    const spacing = (targetWidth - naturalWidth) / text.length - 0.2;
+    const spacing = Math.max(-1, (targetWidth - naturalWidth) / text.length - 0.2);
     eyebrow.style.letterSpacing = spacing + 'px';
   }
 
