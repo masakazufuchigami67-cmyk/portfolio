@@ -10,7 +10,7 @@ export default function middleware(request) {
     const [user, pwd] = atob(authValue).split(':');
 
     if (user === process.env.key && pwd === process.env.pass) {
-      return new Response(null, { status: 200 });
+      return;
     }
   }
 
