@@ -352,6 +352,8 @@
   }
 
   function loadCard(card) {
+    gallery.style.opacity = '0';
+    gallery.style.transition = 'none';
     const pages  = (card.dataset.pages || '').split(',').map(s => s.trim()).filter(Boolean);
     const proj   = parseInt(card.dataset.proj, 10);
     const cat    = card.querySelector('.item-cat')?.textContent    || '';
@@ -364,6 +366,24 @@
 
     const layout = LAYOUTS[proj] || makeDefaultLayout(pages.length);
     buildGallery(layout, pages, name, gallery);
+
+    // Decode first image before showing to avoid blank flash
+    const firstImg = gallery.querySelector('img');
+    if (firstImg) {
+      firstImg.decode().catch(() => {}).then(() => {
+        gallery.style.opacity = '1';
+      });
+    } else {
+      gallery.style.opacity = '1';
+    }
+  }
+
+  function loadCardWithTransition(card) {
+    gallery.style.transition = 'opacity 0.15s ease';
+    gallery.style.opacity = '0';
+    requestAnimationFrame(() => {
+      loadCard(card);
+    });
   }
 
   function openModal(card) {
@@ -407,7 +427,7 @@
     if (currentCardIndex <= 0) return;
     const cards = getVisibleCards();
     currentCardIndex--;
-    loadCard(cards[currentCardIndex]);
+    loadCardWithTransition(cards[currentCardIndex]);
     updateNavButtons();
     preloadAdjacentCards();
     overlay.scrollTop = 0;
@@ -417,7 +437,7 @@
     const cards = getVisibleCards();
     if (currentCardIndex >= cards.length - 1) return;
     currentCardIndex++;
-    loadCard(cards[currentCardIndex]);
+    loadCardWithTransition(cards[currentCardIndex]);
     updateNavButtons();
     preloadAdjacentCards();
     overlay.scrollTop = 0;
